@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <script src="../currency/vendor.min.js"></script>
-<script src="script1.js"></script>
+<script src="script2.js"></script>
 <link rel="stylesheet" href="../currency/vendor.css" />
 <link rel="stylesheet" href="../currency/core.css" />
 <body>
@@ -10,7 +10,7 @@
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Angular Tutorial/a>
+				<a class="navbar-brand" href="#">Angular Tutorial</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -23,8 +23,6 @@
 	<!--  Einfachstes Angular Beispiel mit ng-app lege ich fest das ich Angular verwende -->
 	<div ng-app="scoolapp" class="container">
 
-		<h1>JSON verwenden</h1>
-
 
 		<div ng-controller="controller1">
 			<input type="text" name="search" ng-model="search">
@@ -32,7 +30,8 @@
 				<ul>
 					<li ng-click="select()"
 						ng-repeat="country in countrys | filter:search">{{
-						country.name }}</li>
+						country.name }}
+					</li>
 				</ul>
 				<div>{{selected}}</div>
 			</div>

@@ -71,27 +71,6 @@ body{ background-color: #fafafa; }
   }
 }
 
-.appsList .appIcon {
-  width: 64px;
-  height: 64px;
-  border-radius: 6px;
-  float: left;
-  margin: 4px 8px;
-  box-shadow: 2px 2px 5px #ccc;
-  cursor:pointer;
-}
-
-.appsList .appContainer:hover .appIcon {
-  -webkit-transform: scale(1.05);
-  -moz-transform: scale(1.05);
-  -o-transform: scale(1.05);
-  -ms-transform: scale(1.05);
-  filter: none;
-  -webkit-filter: grayscale(0);
-  box-shadow: 3px 3px 5px #ccc;
-  transition: all 1s ease;
-}
-
 .appsList .appContainer p[content="description"] {
   clear: both;
   height: 40px;
