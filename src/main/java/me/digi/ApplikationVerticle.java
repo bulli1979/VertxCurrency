@@ -1,6 +1,4 @@
 package me.digi;
-import java.nio.charset.Charset;
-
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
 import io.vertx.core.http.HttpServer;
@@ -15,12 +13,6 @@ public class ApplikationVerticle extends AbstractVerticle {
 		Router router = Router.router(vertx);
 		router.route().handler(BodyHandler.create());
 		router.route().handler(StaticHandler.create());
-		String defaultContentEncoding = Charset.defaultCharset().name();
-		System.out.println(defaultContentEncoding);
-		defaultContentEncoding = Charset.defaultCharset().name();
-	    System.out.println(defaultContentEncoding);
-
-		System.setProperty("file.encoding","UTF-8");
 		http = vertx.createHttpServer()
 				.requestHandler(router::accept)
 				.listen(config().getInteger("http.port", 8081),
