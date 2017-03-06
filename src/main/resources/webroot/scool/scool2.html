@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<script src="../currency/vendor.min.js"></script>
+<script src="script2.js"></script>
+<body>
+<!--  Einfachstes Angular Beispiel mit ng-app lege ich fest das ich Angular verwende -->
+<div ng-app="scoolapp">
+ 
+    <h1>JSON verwenden</h1>
+	
+
+	<div ng-controller="controller1">
+		<input type="text" name="search" ng-model="search">
+		<div>
+			<ul>
+			  <li ng-click="select()" ng-repeat="country in countrys | filter:search">
+			    {{ country.name }}
+			  </li>
+			</ul>
+			<div>{{selected}}</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
