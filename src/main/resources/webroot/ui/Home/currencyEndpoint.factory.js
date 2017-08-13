@@ -14,11 +14,11 @@
 							}
 						};
 //${rest-base-url}/getall
-						var allPath = $resource('getall.json', {},
+						var allPath = $resource('getCurrencys', {},
 								{});
 						//${rest-base-url}/change/:amount/:from/:to/
 						var calculatePath = $resource(
-								'change.json', {
+								'calculate', {
 									amount : "@amount",
 									from : "@from",
 									to : "@to"

@@ -13,31 +13,23 @@
 
 <body ng-app="currencyWeb">
 	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
+		<div class="container white">
 			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Currency - Währungsrechner</a>
-			</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
-
-
-				
-			</div>
-			<!-- /.navbar-collapse -->
+			<h1>Currency - Währungsrechner Digicomp</h1>
+			<!--hier noch Menü wenn mehr kommen soll -->
 		</div>
-		<!-- /.container-fluid -->
 	</nav>
 
-	
-	<div ui-view></div>
+	<!-- In View wird der Content geladen
+	Hier exisistiert nur 1 Content und es wäre nicht nötig. 
+	Für Demozwecke habe ich es aber so belassen. 
+	-->
+	<div ui-view>
+	</div>
 
 
-	<footer role="contentinfo" class="bs-docs-footer">
+	<footer role="contentinfo" class="navbar navbar-inverse navbar-fixed-bottom">
 		<div class="container">
-
 			<p class="pull-right">
 				Designed and built in Switzerland by <a
 					href="https://mirko-eberlein.com">Mirko Eberlein</a>.
