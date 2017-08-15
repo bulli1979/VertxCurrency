@@ -3,6 +3,6 @@
 <groups xmlns="http://www.isdc.ro/wro">
   <group name='core.min'>
     <!-- /app.js has to be the first - it defines the Angular app -->
-    <js>/core.js</js>
+    <js>/currency/core.js</js>
   </group>
 </groups>
