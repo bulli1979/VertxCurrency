@@ -1,48 +1,44 @@
 <div class="container" ng-controller="HomeController">
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">Kursdaten</h3>
-		</div>
-	</div>
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">Wechselkurs berechnen</h3>
-		</div>
-		<div class="panel-body">
-
-			<div class="form-group">
-				<select class="form-control" name="changeFrom" id="changeFrom"
-					ng-model="dataFrom.model">
-					<option value="">--- von ---</option>
-					<!-- not selected / blank option -->
-					<option ng-repeat="option in dataFrom.availableOptions"
-						value="{{option.code}}">{{option.name}}</option>
-				</select>
-			</div>
-			<div class="form-group">
-				<select class="form-control" name="changeTo" id="changeTo"
-					ng-model="dataTo.model">
-					<option value="">--- in ---</option>
-					<!-- not selected / blank option -->
-					<option ng-repeat="option in dataTo.availableOptions"
-						value="{{option.code}}">{{option.name}}</option>
-				</select>
-			</div>
-			<div class="form-group">
-				<input class="form-control" type="text" ng-model="amount"
-					placeholder="Betrag">
-			</div>
-			<div class="form-group">
-				<input ng-click="calculate()" class="btn btn-primary" type="button"
-					value="umrechnen">
-				</form>
-			</div>
-			<div id="result" class="alert alert-success uiHide">
-				<strong>Erfolg!</strong> {{result}}
-			</div>
-			<div id="error" class="alert alert-danger uiHide">
-				<strong>Achtung!</strong>{{errortext}}
-			</div>
-		</div>
-	</div>
-</div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Kursdaten</h3>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Wechselkurs berechnen</h3>
+    </div>
+    <div class="panel-body">
+      <form>
+        <div class="form-group">
+          <select class="form-control" name="changeFrom" id="changeFrom" 
+            ng-model="dataFrom.model">
+            <option value="">--- von ---</option>
+            <option ng-repeat="option in dataFrom.availableOptions" 
+               value="{{option.code}}">{{option.name}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select class="form-control" name="changeTo" id="changeTo"
+            ng-model="dataTo.model">
+            <option value="">--- in ---</option>
+            <option ng-repeat="option in dataTo.availableOptions"
+              value="{{option.code}}">{{option.name}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input class="form-control" name="amount" type="text" 
+            ng-model="amount" 
+            laceholder="Betrag">
+        </div>
+        <div class="form-group">
+          <input ng-click="calculate()" class="btn btn-primary" type="button"
+            value="umrechnen">
+        </div>
+      </form>
+      <div id="result" class="alert alert-success uiHide">
+        <strong>Erfolg!</strong> {{result}}
+      </div>
+      <div id="error" class="alert alert-danger uiHide">
+        <strong>Achtung!</strong> {{errortext}}
+      </div>

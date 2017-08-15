@@ -1,17 +1,11 @@
-
 (function(){
-	
-	"use strict";
-	
-	
+	"use strict";	
 	angular.module('currencyWeb')
-		.config([ '$stateProvider', '$urlRouterProvider' , function($stateProvider, $urlRouterProvider) {
+		.config([ '$stateProvider', function($urlRouterProvider) {
 			$stateProvider
 			    .state('home', {
 			      url: "/home",
 			      templateUrl: "ui/Home/home.html",
 			    });
-			}]);
-	
-		  
+			}]);		  
 })();

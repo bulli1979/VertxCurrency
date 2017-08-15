@@ -1,10 +1,7 @@
-
 (function(){
-	
 	"use strict";
-	
-	var currencyWeb = angular.module('currencyWeb', ['ngResource', 'ui.router'])
-		.config(function($stateProvider, $urlRouterProvider) {
+	var currencyWeb = angular.module('currencyWeb', ['ngResource'])
+		.config(function($urlRouterProvider) {
 			  $urlRouterProvider.otherwise("/home");
 		});
 })();

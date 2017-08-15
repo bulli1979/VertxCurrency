@@ -1,12 +1,42 @@
 (function() {
-
 	"use strict";
-
 	angular.module('currencyWeb').controller('HomeController',
 			[ '$scope', 'CurrencyEndpoint', function($scope, CurrencyEndpoint) {
 				var vm = this;
-
-				vm.currencies = CurrencyEndpoint.getAll();
+				vm.currencies = CurrencyEndpoint.getAll();	
+				$scope.amount = "";
+				$scope.errortext = "";
+				$scope.result = "";
+				$scope.dataFrom = {
+					model : null,
+					availableOptions : vm.currencies
+				};
+				$scope.dataTo = {
+					model : null,
+				    aviableOptions : vm.currencies
+				};
+				
+				$scope.calculate = function() {					
+					if(vm.validate()){
+						$scope.errortext = "";
+						vm.calculation = CurrencyEndpoint.calculate($scope.amount, $scope.dataFrom.model, $scope.dataTo.model, function(){
+							$scope.result = $scope.amount + " " + vm.getLangText($scope.dataFrom.model) + " sind "  
+							+ vm.calculation.result + " " + vm.getLangText($scope.dataTo.model);
+						})
+					}
+					$scope.activeUI();
+				}
+				
+				$scope.activeUI = function(){
+					if(vm.validate()){
+						$("#result").css("display","block");
+						$("#error").css("display","none");
+					}else{
+						$("#error").css("display","block");
+						$("#result").css("display","none");
+					}
+				}
+				
 				
 				vm.validate = function(){
 					var amount = $scope.amount;
@@ -39,41 +69,7 @@
 					});
 					return name
 				}
-				
-				$scope.dataFrom = {
-					model : null,
-					availableOptions : vm.currencies
-				};
-				
-				$scope.dataTo = {
-						model : null,
-						availableOptions : vm.currencies
-				};
 
-				$scope.amount = "";
-				$scope.errortext = "";
-				$scope.result = "";
 				
-				$scope.calculate = function() {					
-					if(vm.validate()){
-						$scope.errortext = "";
-						vm.calculation = CurrencyEndpoint.calculate($scope.amount, $scope.dataFrom.model, $scope.dataTo.model, function(){
-							$scope.result = $scope.amount + " " + vm.getLangText($scope.dataFrom.model) + " sind "  
-							+ vm.calculation.result + " " + vm.getLangText($scope.dataTo.model);
-						})
-					}
-					$scope.activeUI();
-				}
-				
-				$scope.activeUI = function(){
-					if(vm.validate()){
-						$("#result").css("display","block");
-						$("#error").css("display","none");
-					}else{
-						$("#error").css("display","block");
-						$("#result").css("display","none");
-					}
-				}
 			} ]);
-	
 })();
